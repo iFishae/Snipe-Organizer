@@ -12,7 +12,7 @@ module.exports = new Command({
   description: "sets bot status",
 
   async run(message, args, client) {
-    if (message.author.id !== '698331475359170640') return message.reply(`You are not Coopsie! You cannot use this command!`)
+    if (message.author.id !== 'YOUR-ID-HERE') return message.reply(`You are not the Owner! You cannot use this command!`)
     message.channel.send(`Status Updated`)
     const arrayOfStatus = [
         `with kids in my cellar.`,
