@@ -14,7 +14,7 @@ const client = new Client();
 
 const Discord = require('discord.js');
 
-const hypixel = new Hypixel.Client('b7b46f7b-58e0-417e-aa8f-9a2cb32c40a5');
+const hypixel = new Hypixel.Client('INSERT-HYPIXEL-API-KEY-HERE');
 
 exports.hypixel = hypixel
 
