@@ -1,0 +1,12 @@
+{
+  "name": "hhb",
+  "version": "1.0.0",
+  "description": "humanhistorybot",
+  "main": "src/index.js",
+  "author": "fishiv",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.0.1",
+    "hypixel-api-reborn": "^10.0.0"
+  }
+}
