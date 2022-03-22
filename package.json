@@ -1,7 +1,7 @@
 {
-  "name": "hhb",
+  "name": "Snipe Organizer",
   "version": "1.0.0",
-  "description": "humanhistorybot",
+  "description": "Organizes Hypixel Snipes",
   "main": "src/index.js",
   "author": "fishiv",
   "license": "ISC",
