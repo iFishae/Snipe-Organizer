@@ -11,16 +11,16 @@ module.exports = new Command({
 
   async run(message, args, client) {
       const helpEmbed = new Discord.MessageEmbed()
-      .setColor('#000000')
+      .setColor('#ff1100')
       .setTitle(`Help Command; Lists Commands`)
-      .addField(`Solos Submittion;`,`
-      >submitsolos (Your Username) (Sniped Player)
-      `)
-      .addField(`Doubles Submittion;`,`
-      >submitdoubles (Your Username) (Sniped Player) (Sniped Player)
-      `)
-      .addField(`Threes and Fours Submittion;`,`
-      >submitthrees/fours (Your Username) (Sniped P1) (SP2) (SP3) (SP3) `)
-      message.reply({ embeds: [helpEmbed] });
-  }
-})
+      .addFields(
+        { name: `Solos Submittion;`, value: `>submitsolos (Your Username) (SP)` },
+        { name: `Doubles Submittion;`, value: `>submitdoubles (Your Username) (SP1) (SP2)`, inline: false },
+        { name: `Threes Submittion;`, value: `>submitthrees (Your Username) (SP1) (SP2) (SP3)`, inline: false },
+        { name: `Fours Submittion;`, value: `>submitfours (Your Username) (SP1) (SP2) (SP3) (SP4)`, inline: false },
+        { name: `Key: How to Use`, value: `SP(Number) means Sniped Player.`, inline: false },
+        { name: `Example:`, value: `>submittriples uwu owo iwi vwv`}
+      )
+  message.channel.send({ embeds: [helpEmbed] });
+      }
+    })
