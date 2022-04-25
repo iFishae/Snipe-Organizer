@@ -56,8 +56,14 @@ module.exports = new Command({
                             { name: `Win-Loss Ratio`, value: `${player.stats.bedwars.WLRatio}`, inline: true }
                         )
 
-                    message.channel.send({ embeds: [submitthrees1Embed, submitthrees2Embed, submitthrees3Embed] });
-                })
+                        const proofEmbed = new Discord.MessageEmbed()
+                        .setColor('#000001')
+                        .setTitle(`Proof of ${args[1]}'s Snipe`)
+                        .setURL(`https://imgur.com/a/${args[5]}`)
+                        .setFooter({ text: "If the hyperlink's link is invalid, then an imgur code was not provided."})
+
+                    client.channels.cache.get('945428392654811187').send({ embeds: [submitthrees1Embed, submitthrees2Embed, submitthrees3Embed, proofEmbed] });
+                }).catch(err => message.channel.send("An Entered Player Does Not Exist!"))
             })
         })
   }})

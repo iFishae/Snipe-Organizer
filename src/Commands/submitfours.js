@@ -68,8 +68,15 @@ module.exports = new Command({
                                 { name: `FKDR`, value: `${player.stats.bedwars.finalKDRatio}`, inline: true },
                                 { name: `Win-Loss Ratio`, value: `${player.stats.bedwars.WLRatio}`, inline: true }
                             )
-                        message.channel.send({ embeds: [submitfours1Embed, submitfours2Embed, submitfours3Embed, submitfours4Embed] });
-                    })
+                        
+                            const proofEmbed = new Discord.MessageEmbed()
+                            .setColor('#000001')
+                            .setTitle(`Proof of ${args[1]}'s Snipe`)
+                            .setURL(`https://imgur.com/a/${args[6]}`)
+                            .setFooter({ text: "If the hyperlink's link is invalid, then an imgur code was not provided."})
+
+                        client.channels.cache.get('945428392654811187').send({ embeds: [submitfours1Embed, submitfours2Embed, submitfours3Embed, submitfours4Embed, proofEmbed] });
+                    }).catch(err => message.channel.send("An Entered Player Does Not Exist!"))
                 })
             })
         })

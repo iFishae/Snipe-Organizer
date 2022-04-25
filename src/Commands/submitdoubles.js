@@ -41,8 +41,14 @@ hypixel.getPlayer(args[2]).then(player => {
             { name: `Win-Loss Ratio`, value: `${player.stats.bedwars.WLRatio}`, inline: true }
             )
 
-          message.channel.send({ embeds: [submitdoubles1Embed, submitdoubles2Embed] });
-      })
+            const proofEmbed = new Discord.MessageEmbed()
+            .setColor('#000001')
+            .setTitle(`Proof of ${args[1]}'s Snipe`)
+            .setURL(`https://imgur.com/a/${args[4]}`)
+            .setFooter({ text: "If there is no valid hyperlink, then an imgur code was not provided."})
+
+          client.channels.cache.get('945428392654811187').send({ embeds: [submitdoubles1Embed, submitdoubles2Embed, proofEmbed] });
+      }).catch(err => message.channel.send("An Entered Player Does Not Exist!"))
   })
     }
 })
